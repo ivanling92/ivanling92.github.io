@@ -1,1 +1,1 @@
-# ivanlingxyz - Personal Website for Ivan
+#Personal Website for Ivan
