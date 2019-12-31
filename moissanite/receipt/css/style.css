@@ -27,7 +27,7 @@ table td, table th { border: 1px solid black; padding: 6px; }
 .edit #save-logo, .edit #cancel-logo { display: inline; }
 .edit #image, #save-logo, #cancel-logo, .edit #change-logo, .edit #delete-logo { display: none; }
 #customer-title { font-size: 15px; font-weight: bold; float: left; width: 450px}
-#notes { font-size: 10px; float: left;}
+#notes { font-size: 14px; float: left;}
 #meta { margin-top: 1px; width: 300px; float: right; }
 #meta td { text-align: right;  }
 #meta td.meta-head { text-align: left; background: #eee; }

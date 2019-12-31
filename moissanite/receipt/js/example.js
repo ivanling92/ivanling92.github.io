@@ -25,7 +25,7 @@ function num_gen() {
   function fourdigits(number) {
     return (number < 1000) ? number + 1900 : number;
   }
-  var numr =  (fourdigits(now.getYear()))+ months[now.getMonth()] + date + "XXX";
+  var numr =  "INV" + (fourdigits(now.getYear()))+ months[now.getMonth()] + date + "XXX";
   return numr;
 }
 
@@ -133,8 +133,8 @@ function passWord() {
 
 $(document).ready(function() {
 	
-	$("#page-wrap").hide();
-	passWord();
+	//$("#page-wrap").hide();
+	//passWord();
 
 	
 
