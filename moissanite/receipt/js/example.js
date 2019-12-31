@@ -133,8 +133,8 @@ function passWord() {
 
 $(document).ready(function() {
 	
-	//$("#page-wrap").hide();
-	//passWord();
+	$("#page-wrap").hide();
+	passWord();
 
 	
 
