@@ -1,2 +1,1 @@
-# ivanling92.github.io
-My webpage
+# ivanlingxyz - Personal Website for Ivan
