@@ -5,24 +5,17 @@
 */
 
 * { margin: 0; padding: 0; }
-body { font: 14px/1.4 Helvetica, Sans-serif; }
+body { font: 12px/1.4 Helvetica, Sans-serif; }
 #page-wrap { width: 800px; margin: 0 auto; }
 
-textarea { border: 0; font: 14px Verdana, Sans-serif; overflow: hidden; resize: none; }
+textarea { border: 0; font: 12px Verdana, Sans-serif; overflow: hidden; resize: none; }
 table { border-collapse: collapse; }
 table td, table th { border: 1px solid black; padding: 6px; }
 
-#header { height: 20px; width: 100%; margin: 20px 0; background: #222; text-align: center; color: white; font: bold 20px Helvetica, Sans-Serif; text-decoration: uppercase; letter-spacing: 20px; padding: 8px 0px; }
+#header { height: 15px; width: 100%; margin: 20px 0; background: #222; text-align: center; color: white; font: bold 15px Helvetica, Sans-Serif; text-decoration: uppercase; letter-spacing: 20px; padding: 8px 0px; }
 
 #address { width: 250px; height: 150px; float: left; }
 #customer { overflow: hidden; }
-
-#story {
-	font: 10px TW-Cent, Helvetica, Sans-serif;
-	text-align: justify;
-	color: gray;
-	text-justify: inter-word;
-}
 
 #logo { text-align: right; float: right; position: relative; margin-top: 25px; border: 1px solid #fff; max-width: 540px; max-height: 100px; overflow: hidden; }
 #logo:hover, #logo.edit { border: 1px solid #000; margin-top: 0px; max-height: 125px; }
@@ -34,7 +27,7 @@ table td, table th { border: 1px solid black; padding: 6px; }
 .edit #save-logo, .edit #cancel-logo { display: inline; }
 .edit #image, #save-logo, #cancel-logo, .edit #change-logo, .edit #delete-logo { display: none; }
 #customer-title { font-size: 15px; font-weight: bold; float: left; width: 450px}
-#notes { font-size: 10px; float: left;}
+#notes { font-size: 12px; float: left; margin-top: 0px;}
 #meta { margin-top: 1px; width: 300px; float: right; }
 #meta td { text-align: right;  }
 #meta td.meta-head { text-align: left; background: #eee; }
