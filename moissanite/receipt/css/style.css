@@ -5,10 +5,10 @@
 */
 
 * { margin: 0; padding: 0; }
-body { font: 14px/1.4 Helvetica, Sans-serif; }
+body { font: 12px/1.4 Helvetica, Sans-serif; }
 #page-wrap { width: 800px; margin: 0 auto; }
 
-textarea { border: 0; font: 14px Verdana, Sans-serif; overflow: hidden; resize: none; }
+textarea { border: 0; font: 12px Verdana, Sans-serif; overflow: hidden; resize: none; }
 table { border-collapse: collapse; }
 table td, table th { border: 1px solid black; padding: 6px; }
 
@@ -27,7 +27,7 @@ table td, table th { border: 1px solid black; padding: 6px; }
 .edit #save-logo, .edit #cancel-logo { display: inline; }
 .edit #image, #save-logo, #cancel-logo, .edit #change-logo, .edit #delete-logo { display: none; }
 #customer-title { font-size: 15px; font-weight: bold; float: left; width: 450px}
-#notes { font-size: 14px; float: left;}
+#notes { font-size: 12px; float: left; margin-top: 0px;}
 #meta { margin-top: 1px; width: 300px; float: right; }
 #meta td { text-align: right;  }
 #meta td.meta-head { text-align: left; background: #eee; }
