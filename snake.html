@@ -80,11 +80,9 @@ function loop() {
 
   // wrap snake position horizontally on edge of screen
   if (snake.x < 0) {
-    //alert("game over!")
-	snake.x = canvas.width - grid;
+   	snake.x = canvas.width - grid;
   }
   else if (snake.x >= canvas.width) {
-   //alert("game over!")
     snake.x = 0;
   }
   
