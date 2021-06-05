@@ -28,9 +28,10 @@
   <h1 id=ipText>Testing V3.9 with http</h1>
   <p>( Testing response WITH THE NEW HTTP )</p> 
   
-  <script src='request.js'>
+  <script src='require.js'>
+    console.log("hello world");
     let myScript = document.createElement("script");
-    myScript.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js");
+    myScript.setAttribute("src", "request.js");
     document.body.appendChild(myScript);
     let req = require("request");
     
