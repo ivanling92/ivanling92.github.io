@@ -25,10 +25,13 @@
 </head>
 
 <body>
-  <h1 id=ipText>Testing V3.7</h1>
+  <h1 id=ipText>Testing V3.8</h1>
   <p>( Testing response )</p> 
-  <script src = 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js'>
+  
   <script src='unpkg.com/:request@:2.88.2/:request.js'>
+    let myScript = document.createElement("script");
+    myScript.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js");
+    document.body.appendChild(myScript);
     let req = require("request");
     
     let data = {
@@ -88,10 +91,7 @@
         console.log("The request failed with status code: " + res.statusCode);
     }
 });
-    
-    
-
-  </script>
+</script>
 </body>
 
 </html>
