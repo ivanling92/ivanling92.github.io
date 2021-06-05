@@ -28,24 +28,65 @@
   <h1 id=ipText>Testing</h1>
   <p>( Testing response )</p>  
   <script>
-    var url = "https://ussouthcentral.services.azureml.net/workspaces/b473206723fd4cf4a8b46689a1f76dbe/services/c35281ab15da49a58eb0f2710c55ce57/execute?api-version=2.0&format=swagger";
-    var method = "POST";
-    var postData = '{"Inputs":{"input1":{"ColumnNames":["Month","LD_MYR","DC_NETT_DOWN","DC_GROSS_DOWN","GRID_DOWN","Percipitation"],"Values":[["0","0","0","0","0","0"],["0","0","0","0","0","0"]]}},"GlobalParameters":{}}';
-    var shouldBeAsync = true;
-    var request = new XMLHttpRequest();
-    var api_key = "49hP8LfT5KRE3s8EYzfdrXuHKC1E3rn/R6KabsT4EGb4kUSl1xH5lG7JOyEpJiL+3w9j9aBuCHrO9yxMDMWrpA==";
+    let req = require("request");
     
-    request.onload = function () {
-      var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
-      var data = request.responseText; // Returned data, e.g., an HTML document.
-      document.querySelector("#ipText").innerHTML = status;
-      
+    let data = {
+  "Inputs": {
+    "input1": {
+      "ColumnNames": [
+        "Month",
+        "LD_MYR",
+        "DC_NETT_DOWN",
+        "DC_GROSS_DOWN",
+        "GRID_DOWN",
+        "Percipitation"
+      ],
+      "Values": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ]
     }
-
-
-    request.open(method, url, shouldBeAsync);
-    request.setRequestHeader("Content-Type", "application/json", 'Authorization','Bearer '+ api_key);
-    request.send(postData);
+  },
+  "GlobalParameters": {}
+}
+    
+    
+    var url = "https://ussouthcentral.services.azureml.net/workspaces/b473206723fd4cf4a8b46689a1f76dbe/services/c35281ab15da49a58eb0f2710c55ce57/execute?api-version=2.0&format=swagger";
+    var apiKey = "49hP8LfT5KRE3s8EYzfdrXuHKC1E3rn/R6KabsT4EGb4kUSl1xH5lG7JOyEpJiL+3w9j9aBuCHrO9yxMDMWrpA==";
+    
+    
+    const options = {
+    uri: url,
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + apiKey,
+    },
+    body: JSON.stringify(data)
+    }
+    
+    req(options, (err, res, body) => {
+    if (!err && res.statusCode == 200) {
+        console.log(body);
+    } else {
+        console.log("The request failed with status code: " + res.statusCode);
+    }
+});
+    
     
 
   </script>
