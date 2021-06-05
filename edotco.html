@@ -26,18 +26,28 @@
 
 <body>
   <h1 id=ipText></h1>
-  <p>( This is your IP address...probably :P )</p>
+  <p>( Testing response )</p>  
   <script>
-    fetch("https://ussouthcentral.services.azureml.net/workspaces/b473206723fd4cf4a8b46689a1f76dbe/services/c35281ab15da49a58eb0f2710c55ce57/execute?api-version=2.0&format=swagger")
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (myJson) {
-        document.querySelector("#ipText").innerHTML = myJson.text;
-      })
-      .catch(function (error) {
-        console.log("Error: " + error);
-      });
+    var url = "https://ussouthcentral.services.azureml.net/workspaces/b473206723fd4cf4a8b46689a1f76dbe/services/c35281ab15da49a58eb0f2710c55ce57/execute?api-version=2.0&format=swagger";
+    var method = "POST";
+    var postData = '{        "Inputs": {                "input1":                {                    "ColumnNames": ["Month", "LD_MYR", "DC_NETT_DOWN", "DC_GROSS_DOWN", "GRID_DOWN", "Percipitation"],                    "Values": [ [ "0", "0", "0", "0", "0", "0" ], [ "0", "0", "0", "0", "0", "0" ], ]                },        },            "GlobalParameters": {}  }';
+    var shouldBeAsync = true;
+    var request = new XMLHttpRequest();
+    var api_key = "49hP8LfT5KRE3s8EYzfdrXuHKC1E3rn/R6KabsT4EGb4kUSl1xH5lG7JOyEpJiL+3w9j9aBuCHrO9yxMDMWrpA==";
+    
+    request.onload = function () {
+      var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
+      var data = request.responseText; // Returned data, e.g., an HTML document.
+      document.querySelector("#ipText").innerHTML = status;
+      
+    }
+
+
+    request.open(method, url, shouldBeAsync);
+    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8", 'Authorization','Bearer '+ api_key));
+    request.send(postData);
+    
+
   </script>
 </body>
 
