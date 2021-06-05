@@ -1,12 +1,4 @@
-UNPKG
-request/request.js
-Version: 
-2.88.2
 
-44.5 kB
-JavaScript
-View Raw
-'use strict'
 
 var http = require('http')
 var https = require('https')
