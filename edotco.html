@@ -33,7 +33,7 @@
         return response.json();
       })
       .then(function (myJson) {
-        document.querySelector("#ipText").innerHTML = myJson.ip;
+        document.querySelector("#ipText").innerHTML = myJson.text;
       })
       .catch(function (error) {
         console.log("Error: " + error);
