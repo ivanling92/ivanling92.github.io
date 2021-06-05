@@ -7,6 +7,8 @@
 /*jslint regexp: true, nomen: true, sloppy: true */
 /*global window, navigator, document, importScripts, setTimeout, opera */
 
+document.querySelector("#ipText").innerHTML = "Loading require...";
+
 var requirejs, require, define;
 (function (global, setTimeout) {
     var req, s, head, baseElement, dataMain, src,
@@ -2143,3 +2145,4 @@ var requirejs, require, define;
     //Set up with config info.
     req(cfg);
 }(this, (typeof setTimeout === 'undefined' ? undefined : setTimeout)));
+
