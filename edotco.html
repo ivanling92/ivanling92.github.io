@@ -5,7 +5,7 @@
   <title>Display IP Address</title>
   <style>
     body {
-      background-color: #FFCC00;
+      background-color: #AFEEEE;
     }
 
     h1 {
@@ -28,7 +28,7 @@
   <h1 id=ipText></h1>
   <p>( This is your IP address...probably :P )</p>
   <script>
-    fetch("https://ipinfo.io/json")
+    fetch("https://ussouthcentral.services.azureml.net/workspaces/b473206723fd4cf4a8b46689a1f76dbe/services/c35281ab15da49a58eb0f2710c55ce57/execute?api-version=2.0&format=swagger")
       .then(function (response) {
         return response.json();
       })
