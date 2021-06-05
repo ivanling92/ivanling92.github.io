@@ -25,9 +25,9 @@
 </head>
 
 <body>
-  <h1 id=ipText>Testing V3.5</h1>
+  <h1 id=ipText>Testing V3.7</h1>
   <p>( Testing response )</p> 
-  <script src = 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js'/>
+  <script src = 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js'>
   <script src='unpkg.com/:request@:2.88.2/:request.js'>
     let req = require("request");
     
@@ -83,6 +83,7 @@
     req(options, (err, res, body) => {
     if (!err && res.statusCode == 200) {
         console.log(body);
+        document.querySelector("#ipText").innerHTML = body;
     } else {
         console.log("The request failed with status code: " + res.statusCode);
     }
