@@ -26,11 +26,55 @@
 
 <body>
   <h1 id=ipText>Testing V4.0 with http</h1>
+   <div id="text1"><p>( Testing response WITH THE NEW HTTP )</p> </div>
+  <button>Test AJAX</button>
 
-<p>( Testing response WITH THE NEW HTTP )</p> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-    
-    
+  
+  var url = "https://ussouthcentral.services.azureml.net/workspaces/b473206723fd4cf4a8b46689a1f76dbe/services/c35281ab15da49a58eb0f2710c55ce57/execute?api-version=2.0&format=swagger";
+  
+  $(document).ready(function(){
+    $("button").click(function(){
+      $("#text1").html("<p>LOLOLOLOL</p>");
+      $.post(url,
+        {
+          "Inputs": {
+            "input1": {
+              "ColumnNames": [
+                "Month",
+                "LD_MYR",
+                "DC_NETT_DOWN",
+                "DC_GROSS_DOWN",
+                "GRID_DOWN",
+                "Percipitation"
+              ],
+              "Values": [
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ]
+            }
+          },
+        "GlobalParameters": {}
+        },
+          function(data,status){
+            alert("Data: " + data + "\nStatus: " + status);
+          });
+  });
+});
 </script>
 
 </body>
