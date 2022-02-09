@@ -1,0 +1,58 @@
+<!--DOCTYPE html-->
+<!-- Adapted from MIPS Converter by Aaron Wasserman -->
+<html lang="en">
+<head>
+	<script src="instToHex.js"></script>
+  	<script src="hexToInst.js"></script>
+  	<script src="globals.js"></script>
+		
+</head>
+
+<body>
+<h1>MIPS Converter V1.0</h1>
+ <form class="form" action="#">
+        <input class="form-control" placeholder="Instruction" id="inputInstruction">
+        <br>
+        <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" checked="checked" class="form-check-input" name="optradio">Register Numbers (ex $2)
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optradio">Register Names (ex v0)
+            </label>
+          </div>
+          <br>
+        <button type="submit" class="btn btn-light" onclick="instToHex()">Convert!</button>
+      </form>
+	  <p>
+	  <p>
+	  
+	  <form class="form" action="#">
+          <input class="form-control" placeholder="Hex" id="hex">
+          <br>
+          <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" checked="checked" class="form-check-input" name="optradio" id="num_rad">Register Numbers (ex $2)
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optradio">Register Names (ex v0)
+              </label>
+            </div>
+            <br>
+          <button type="submit" class="btn btn-light" onclick="hexToInst()">Convert!</button>
+        </form>
+
+<p>
+<p>
+<h5><span id="resultsHeader"></span></h5>
+<h5><span id="outInst"></span></h5>
+<h5><span id="output"></span></h5>
+<h5><span id="test"></span></h5>
+
+</body>
+
+</html>
