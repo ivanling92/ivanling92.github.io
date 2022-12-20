@@ -105,6 +105,10 @@ function update_price() {
   update_total();
 }
 
+
+
+
+
 function bind() {
   $(".cost").blur(update_price);
   $(".qty").blur(update_price);
@@ -131,11 +135,16 @@ function passWord() {
 	return " ";
 }
 
+
 $(document).ready(function() {
 	
 	$("#page-wrap").hide();
 	passWord();
-
+    $(".inputfile").change(function () {
+        $(this).parent().find("img").attr("src", URL.createObjectURL(this.files[0]));     
+        //$("#imageSrc").attr("src", URL.createObjectURL(this.files[0]));
+        console.log($(this).val());
+    });
 	
 
   $('input').click(function(){
@@ -145,9 +154,14 @@ $(document).ready(function() {
   $("#paid").blur(update_balance);
    
   $("#addrow").click(function(){
-    $(".item-row:last").after('<tr class="item-row"><td class="item-name"><div class="delete-wpr"><textarea>Item Name</textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div></td><td class="description"><textarea>Description</textarea></td><td><textarea class="cost">$0</textarea></td><td><textarea class="qty">0</textarea></td><td><span class="price">$0</span></td></tr>');
+      $(".item-row:last").after('<tr class="item-row"><td class="item-name"><div class="delete-wpr"><textarea>Item Name</textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div></td><td class="description"><textarea>Description</textarea><img id="imageSrc" alt="No Image" width="100" height="100" /><input type="file" id="fileInput" accept="image/*" class="inputfile" /></td><td><textarea class="cost">RM0</textarea></td><td><textarea class="qty">0</textarea></td><td><span class="price">RM0</span></td></tr>');
     if ($(".delete").length > 0) $(".delete").show();
-    bind();
+      bind();
+      $(".inputfile").change(function () {
+          $(this).parent().find("img").attr("src", URL.createObjectURL(this.files[0]));
+          //$("#imageSrc").attr("src", URL.createObjectURL(this.files[0]));
+          console.log($(this).val());
+      });
   });
   
   bind();
@@ -169,12 +183,12 @@ $(document).ready(function() {
     $("#logo").addClass('edit');
     $("#imageloc").val($("#image").attr('src'));
     $("#image").select();
-  });*/
+  });
   $("#save-logo").click(function(){
     $("#image").attr('src',$("#imageloc").val());
     $("#logo").removeClass('edit');
   });
-  
+  */
   $("#date").val(print_today());
   $("#receipt-num").val(num_gen());
   
