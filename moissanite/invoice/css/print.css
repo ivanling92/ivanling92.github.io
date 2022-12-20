@@ -6,3 +6,8 @@
 .inputfile {
     display: none;
 }
+
+html {
+    overflow: hidden;
+}
+
