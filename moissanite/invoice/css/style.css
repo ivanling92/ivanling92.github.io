@@ -114,6 +114,12 @@ table td, table th { border: 1px solid #473831; padding: 6px; }
 		border: 0;
 		vertical-align: top;
 	}
+
+	#items tr.total td {
+		border: 0;
+		vertical-align: middle;
+	}
+	
 #items td.description { width: 300px; }
 #items td.item-name { width: 175px; }
 #items td.description textarea, #items td.item-name textarea { width: 100%; }
@@ -124,13 +130,15 @@ table td, table th { border: 1px solid #473831; padding: 6px; }
 		height: 30px;
 		background: none;
 		font: bold 15px Marcellus, Serif;
+		vertical-align: middle;
 	}
 
 #items td.total-value { border-left: 0; padding: 10px; }
 	#items td.total-value textarea {
 		height: 30px;
 		background: none;
-		font: bold 15px Marcellus, Serif; 
+		font: bold 15px Marcellus, Serif;
+		vertical-align: middle;
 	}
 	#items td.balance {
 		background: #ede8e6;
@@ -138,6 +146,8 @@ table td, table th { border: 1px solid #473831; padding: 6px; }
 		color: #473831;
 	}
 #items td.blank { border: none; vertical-align: top; }
+	
+
 
 #terms {
 	text-align: center;
