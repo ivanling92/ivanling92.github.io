@@ -3,13 +3,16 @@
 <!--Yayyyy-->
 <head>
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-	
+
 	<title>Greyscorff Invoice</title>
-	
+
 	<link rel='stylesheet' type='text/css' href='css/style.css' />
 	<link rel='stylesheet' type='text/css' href='css/print.css' media="print" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marcellus" />
 	<script type='text/javascript' src='js/jquery-1.3.2.min.js'></script>
 	<script type='text/javascript' src='js/example.js'></script>
+
 
 </head>
 
@@ -22,7 +25,7 @@
 
 	<div id="page-wrap">
 
-		<textarea id="header">INVOICE</textarea>
+		<textarea id="header" style="">INVOICE</textarea>
 		
 		<div id="identity">
 		
@@ -63,12 +66,12 @@
             <table id="meta">
                 <tr>
                     <td class="meta-head">Invoice No.</td>
-                    <td><textarea id="receipt-num">20191231001</textarea></td>
+                    <td><textarea id="receipt-num" class="info">20191231001</textarea></td>
                 </tr>
                 <tr>
 
                     <td class="meta-head">Date</td>
-                    <td><textarea id="date">December 15, 2019</textarea></td>
+                    <td><textarea id="date" class="info">December 15, 2019</textarea></td>
                 </tr>
                 <tr>
                     <td class="meta-head">Amount Due</td>
@@ -115,7 +118,7 @@
 		    <td colspan="5"><a id="addrow" href="javascript:;" title="Add a row">Add a row</a></td>
 		  </tr>
 		  
-		  <tr>
+	<tr class="item-row">
 			  <td rowspan="3" colspan="2">
 	Payment term:
 	<p/>50% Deposit is to be paid in advanced.
@@ -125,20 +128,19 @@
 	<textarea id="notes" style="width:100%; height:1500;"></textarea></td>
 		      <td colspan="2" class="total-line">Subtotal</td>
 		      <td class="total-value"><div id="subtotal">RM1400.00</div></td>
-		  </tr>
-		  <tr>
+	</tr>
+		  <tr class="item-row">
 
 		      <!--<td colspan="2" class="blank"> </td>-->
 		      <td colspan="2" class="total-line">Total</td>
 		      <td class="total-value"><div id="total">RM1400.00</div></td>
 		  </tr>
-		  <tr>
+		  <tr class="item-row">
 		      <!--<td colspan="2" class="blank"> </td>-->
 		      <td colspan="2" class="total-line">Deposit Paid</td>
-
 		      <td class="total-value"><textarea id="paid">RM0.00</textarea></td>
 		  </tr>
-		  <tr>
+		  <tr >
 		      <td colspan="2" class="blank"><textarea style="width:100%; height:1500;">Handled by: Terrence Goh</textarea></td>
 		      <td colspan="2" class="total-line balance">Balance Due</td>
 		      <td class="total-value balance"><div class="due">RM1400.00</div></td>
@@ -150,7 +152,9 @@
 		  <h5>THANK YOU FOR ORDERING WITH US</h5>
 		  <div id="story">At Greyscorff, we strive to create jewelery that truly represents your story, and your spirit. Join us, as we explore your personal style, preferences, budget and above all, the message you would like the piece to carry. Once the piece is completed and ready for collection, we will meet up with you, and embark on a journey with you, marking a new chapter of your life. We hope this piece will celebrate the little happiness in your life, sail through the hard times and embrace the changes you face. Do remember to include us in the stories of your life by tagging us @greyscorff on Facebook and Instagram.</div>
 			<br><br>
-		  <p/><strong>Greyscorff is a fully owned brand by Moissanite Malaysia Sdn. Bhd.  (Company No. 201901010165)</strong>
+		  <p><strong>Greyscorff is a fully owned brand by Moissanite Malaysia Sdn. Bhd.  (Company No. 201901010165)</strong></p>
+			</br>
+			<p>  </p>
 		</div>
 	
 	</div>

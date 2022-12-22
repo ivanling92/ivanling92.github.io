@@ -138,8 +138,8 @@ function passWord() {
 
 $(document).ready(function() {
 	
-	$("#page-wrap").hide();
-	passWord();
+	//$("#page-wrap").hide();
+	//passWord();
     $(".inputfile").change(function () {
         $(this).parent().find("img").attr("src", URL.createObjectURL(this.files[0]));     
         //$("#imageSrc").attr("src", URL.createObjectURL(this.files[0]));

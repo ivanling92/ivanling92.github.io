@@ -5,17 +5,49 @@
 */
 
 * { margin: 0; padding: 0; }
-body { font: 12px/1.4 Helvetica, Sans-serif; }
+body {
+	font: bold 15px Marcellus, Serif;
+	color: #473831;
+}
 #page-wrap { width: 800px; margin: 0 auto; }
 
-textarea { border: 0; font: 12px Verdana, Sans-serif; overflow: hidden; resize: none; }
+textarea {
+	border: 0;
+	font: bold 12px Marcellus, Serif;
+	overflow: hidden;
+	resize: none;
+	color: #473831;
+}
+
+
 table { border-collapse: collapse; }
-table td, table th { border: 1px solid black; padding: 6px; }
+table td, table th { border: 1px solid #473831; padding: 6px; }
 
-#header { height: 15px; width: 100%; margin: 20px 0; background: #222; text-align: center; color: white; font: bold 15px Helvetica, Sans-Serif; text-decoration: uppercase; letter-spacing: 20px; padding: 8px 0px; }
+#header {
+	height: 30px;
+	width: 100%;
+	margin: 20px 0;
+	background: #806b61;
+	text-align: center;
+	color: #473831;
+	font: bold 25px Marcellus, Serif;
+	text-decoration: uppercase;
+	letter-spacing: 20px;
+	padding: 8px 0px;
+}
 
-#address { width: 250px; height: 150px; float: left; }
-#customer { overflow: hidden; }
+#address {
+	width: 350px;
+	height: 150px;
+	float: left;
+	font: bold 15px Marcellus, Serif;
+	color: #473831;
+}
+#customer {
+	overflow: hidden;
+	font: bold 15px Marcellus, Serif;
+	color: #473831;
+}
 
 #logo { text-align: right; float: right; position: relative; margin-top: 25px; border: 1px solid #fff; max-width: 540px; max-height: 100px; overflow: hidden; }
 #logo:hover, #logo.edit { border: 1px solid #000; margin-top: 0px; max-height: 125px; }
@@ -27,27 +59,99 @@ table td, table th { border: 1px solid black; padding: 6px; }
 .edit #save-logo, .edit #cancel-logo { display: inline; }
 .edit #image, #save-logo, #cancel-logo, .edit #change-logo, .edit #delete-logo { display: none; }
 #customer-title { font-size: 15px; font-weight: bold; float: left; width: 450px}
-#notes { font-size: 12px; float: left; margin-top: 0px;}
-#meta { margin-top: 1px; width: 300px; float: right; }
-#meta td { text-align: right;  }
-#meta td.meta-head { text-align: left; background: #eee; }
-#meta td textarea { width: 100%; height: 20px; text-align: right; }
+#notes {
+	font-size: 12px;
+	color: #473831;
+	float: left;
+	margin-top: 0px;
+}
 
-#items { clear: both; width: 100%; margin: 30px 0 0 0; border: 1px solid black; }
-#items th { background: #eee; }
-#items textarea { width: 80px; height: 50px; }
-#items tr.item-row td { border: 0; vertical-align: top; }
+
+.info {
+    overflow: hidden;
+    font: bold 20px Marcellus, Serif;
+    color: #473831;
+}
+
+#meta { margin-top: 1px; width: 300px; float: right; }
+	#meta td {
+		text-align: right;
+		font-size: 15px;
+		color: #473831;
+		border: none;
+	}
+	#meta td.meta-head {
+		text-align: left;
+		background: #ede8e6;
+	}
+	#meta td textarea {
+		width: 100%;
+		height: 20px;
+		text-align: right;
+		font-size: 12px;
+		color: #473831;
+	}
+
+#items {
+	clear: both;
+	width: 100%;
+	margin: 30px 0 0 0;
+	border: none;
+}
+	#items th {
+		background: #ede8e6;
+		font: bold 15px Marcellus, Serif;
+		color: #473831;
+		border:none;
+	}
+	#items textarea {
+		width: 80px;
+		height: 50px;
+		font: bold 12px Marcellus, Serif;
+		color: #473831;
+	}
+	#items tr.item-row td {
+		border: 0;
+		vertical-align: top;
+	}
 #items td.description { width: 300px; }
 #items td.item-name { width: 175px; }
 #items td.description textarea, #items td.item-name textarea { width: 100%; }
-#items td.total-line { border-right: 0; text-align: right; }
-#items td.total-value { border-left: 0; padding: 10px; }
-#items td.total-value textarea { height: 20px; background: none; }
-#items td.balance { background: #eee; }
-#items td.blank { border: 0; vertical-align: top; }
 
-#terms { text-align: center; margin: 20px 0 0 0; }
-#terms h5 { text-transform: uppercase; font: 13px Helvetica, Sans-Serif; letter-spacing: 10px; border-bottom: 1px solid black; padding: 0 0 8px 0; margin: 0 0 8px 0; }
+
+#items td.total-line { border-right: 0; text-align: right; }
+	#items td.total-line textarea {
+		height: 30px;
+		background: none;
+		font: bold 15px Marcellus, Serif;
+	}
+
+#items td.total-value { border-left: 0; padding: 10px; }
+	#items td.total-value textarea {
+		height: 30px;
+		background: none;
+		font: bold 15px Marcellus, Serif;
+	}
+	#items td.balance {
+		background: #ede8e6;
+		font: bold 15px Marcellus, Serif;
+		color: #473831;
+	}
+#items td.blank { border: none; vertical-align: top; }
+
+#terms {
+	text-align: center;
+	margin: 20px 0 0 0;
+	border: none;
+}
+	#terms h5 {
+		text-transform: uppercase;
+		font: 13px Helvetica, Sans-Serif;
+		letter-spacing: 10px;
+		border-bottom: 1px solid #473831;
+		padding: 0 0 8px 0;
+		margin: 0 0 8px 0;
+	}
 #terms textarea { width: 100%; text-align: center;}
 
 textarea:hover, textarea:focus, #items td.total-value textarea:hover, #items td.total-value textarea:focus, .delete:hover { background-color:#EEFF88; }

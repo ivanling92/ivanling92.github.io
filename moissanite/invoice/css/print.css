@@ -1,13 +1,13 @@
+
+
 #hiderow,
 .delete {
-  display: none;
+    display: none;
 }
 
 .inputfile {
     display: none;
 }
 
-html {
-    overflow: hidden;
-}
+
 
