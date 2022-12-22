@@ -130,7 +130,7 @@ table td, table th { border: 1px solid #473831; padding: 6px; }
 	#items td.total-value textarea {
 		height: 30px;
 		background: none;
-		font: bold 15px Marcellus, Serif;
+		font: bold 15px Marcellus, Serif; 
 	}
 	#items td.balance {
 		background: #ede8e6;
