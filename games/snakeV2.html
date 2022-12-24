@@ -216,6 +216,60 @@ function drawLives() {
 loop();
 
 
+
+// Define the variables that will be used to track the swipe gesture
+let xDown = null;
+let yDown = null;
+
+// Handle the touchstart event
+function handleTouchStart(evt) {
+  // Get the x and y coordinates of the touch event
+  xDown = evt.touches[0].clientX;
+  yDown = evt.touches[0].clientY;
+}
+
+// Handle the touchmove event
+function handleTouchMove(evt) {
+  if (!xDown || !yDown) {
+    return;
+  }
+
+  // Get the current x and y coordinates of the touch event
+  let xUp = evt.touches[0].clientX;
+  let yUp = evt.touches[0].clientY;
+
+  // Calculate the distance the finger has moved in the x and y directions
+  let xDiff = xDown - xUp;
+  let yDiff = yDown - yUp;
+
+  // Check if the gesture is a swipe
+  if (Math.abs(xDiff) > Math.abs(yDiff)) {
+    // Handle a swipe in the x direction
+    if (xDiff > 0) {
+      // Swipe left
+      direction = 'left';
+    } else {
+      // Swipe right
+      direction = 'right';
+    }
+  } else {
+    // Handle a swipe in the y direction
+    if (yDiff > 0) {
+      // Swipe up
+      direction = 'up';
+    } else {
+      // Swipe down
+      direction = 'down';
+    }
+  }
+
+  // Reset the x and y coordinates for the next touch event
+  xDown = null;
+  yDown = null;
+}
+
+
+
 // Add event listeners to handle key presses
 document.addEventListener('keydown', function(event) {
   // Change the direction of the snake based on the key press
