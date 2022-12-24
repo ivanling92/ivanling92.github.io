@@ -269,6 +269,9 @@ function handleTouchMove(evt) {
 }
 
 
+document.addEventListener('touchstart', handleTouchStart, false);
+      document.addEventListener('touchmove', handleTouchMove, false);
+
 
 // Add event listeners to handle key presses
 document.addEventListener('keydown', function(event) {
