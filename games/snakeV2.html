@@ -19,12 +19,15 @@
     <canvas id="game-canvas" width="400" height="400"></canvas>
 
     <!-- Load the rainbow-colored snake image -->
-    <img id="snake-image" src="rainbowsnake.png" style="display:none">
+    <!--<img id="snake-image" src="rainbowsnake.png" style="display:none">-->
 
     <!-- Add the JavaScript code for the game -->
     <script>
       // Set the size of each grid cell in the game
       const GRID_SIZE = 20;
+      // Create an array of rainbow colors
+      const colors = ['#FF0000', '#FFA500', '#FFFF00', '#008000', '#0000FF', '#4B0082', '#EE82EE'];
+
       // Set the initial direction and speed of the snake
       let direction = 'right';
       let speed = 100;
@@ -36,7 +39,7 @@
       let canvas = document.getElementById('game-canvas');
       let ctx = canvas.getContext('2d');
       // Get the snake image element
-      let snakeImage = document.getElementById('snake-image');
+      //let snakeImage = document.getElementById('snake-image');
       // Function to draw the snake on the canvas
 	  const LIFE_ICON_SIZE = 20;
 	  // Set the initial number of lives
@@ -47,7 +50,8 @@
         // Loop through each segment of the snake and draw it on the canvas
         for (let i = 0; i < snake.length; i++) {
           let segment = snake[i];
-          ctx.drawImage(snakeImage, segment.x, segment.y, GRID_SIZE, GRID_SIZE);
+          ctx.fillStyle = colors[i%7];
+          ctx.fillRect(segment.x, segment.y, GRID_SIZE, GRID_SIZE);
         }
       }
       // Function to draw the food on the canvas
