@@ -77,30 +77,68 @@ function roundNumber(number,decimals) {
 function update_total() {
   var total = 0;
   $('.price').each(function(i){
-    price = $(this).html().replace("RM","");
+    price = $(this).html().replace("RM","").replace(",","");
     if (!isNaN(price)) total += Number(price);
   });
 
-  total = roundNumber(total,2);
+    total = roundNumber(total, 2);
+    if (String(total).length > 6) {
+        total = total.slice(0, -6) + "," + total.slice(-6);
+    }
+
 
   $('#subtotal').html("RM"+total);
-  $('#total').html("RM"+total);
+  $('#total').html("RM" + total);
+
   
-  update_balance();
+  update_balance(1);
 }
 
-function update_balance() {
-  var due = $("#total").html().replace("RM","") - $("#paid").val().replace("RM","");
-  due = roundNumber(due,2);
-  
-  $('.due').html("RM"+due);
+function update_balance(a) {
+    var due = $("#total").html().replace("RM", "").replace(",", "") - $("#paid").val().replace("RM", "").replace(",","");
+    
+    due = roundNumber(due, 2);
+    
+    if (String(due).length > 6) {
+        due = due.slice(0, -6) + "," + due.slice(-6);
+    }
+
+    $('.due').html("RM" + due);
+    if (a == null) {
+        var paid = $("#paid").val().replace("RM", "").replace(",", "");
+        if (String(paid).length > 6) {
+            paid = paid.slice(0, -6) + "," + paid.slice(-6);
+        }
+        $('#paid').html("RM" + paid);
+    }
+    
+
+
+    
 }
 
 function update_price() {
   var row = $(this).parents('.item-row');
-  var price = row.find('.cost').val().replace("RM","") * row.find('.qty').val();
-  price = roundNumber(price,2);
-  isNaN(price) ? row.find('.price').html("N/A") : row.find('.price').html("RM"+price);
+  var price = row.find('.cost').val().replace("RM","").replace(",", "") * row.find('.qty').val();
+  price = roundNumber(price, 2);
+    //isNaN(price) ? row.find('.price').html("N/A") : row.find('.price').html("RM" + price);
+
+    if (isNaN(price)) {
+        row.find('.price').html("N/A");
+    }
+    else {
+        if (String(price).length > 6) {
+            price = price.slice(0, -6) + "," + price.slice(-6);
+            row.find('.price').html("RM" + price);
+        }
+        else {
+            row.find('.price').html("RM" + price);
+        }
+    }
+
+    
+    
+    
   
   update_total();
 }
@@ -138,8 +176,8 @@ function passWord() {
 
 $(document).ready(function() {
 	
-	//$("#page-wrap").hide();
-	//passWord();
+	$("#page-wrap").hide();
+	passWord();
     $(".inputfile").change(function () {
         $(this).parent().find("img").attr("src", URL.createObjectURL(this.files[0]));     
         //$("#imageSrc").attr("src", URL.createObjectURL(this.files[0]));
