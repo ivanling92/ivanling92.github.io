@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Equation Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/algebra.js/0.2.6/algebra.min.js"></script>
+</head>
+<body>
+  <input type="text" id="equation">
+  <button onclick="drawChart()">Draw Chart</button>
+  <canvas id="chart" width="800" height="600"></canvas>
+  
+  
+
+  <script>
+	let series = 0;
+    function parseEquation(equation) {
+      // Use the algebra.js library to parse the equation
+	  
+	  console.log(algebra.parse(equation).toString());
+	  
+      return algebra.parse(equation);
+    }
+	
+	// Set up the chart
+      const ctx = document.getElementById('chart').getContext('2d');
+      const chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: 0, // X-values for the points on the chart
+          datasets: [{
+            label: equation,
+            data: [], // Y-values for the points on the chart
+          }]
+        },
+        options: {
+          scales: {
+            xAxes: [{
+              type: 'linear',
+              position: 'bottom'
+            }]
+          }
+        }
+      });
+
+    function drawChart() {
+      // Get the equation from the textbox
+      const equation = document.getElementById('equation').value;
+
+      // Parse the equation
+      const parsedEquation = parseEquation(equation);
+	  let color_c = "#" + Math.floor(Math.random()*16777215).toString(16);
+	if(series <1)
+	{
+	chart.data.datasets.push({label: series, borderColor: color_c});
+	}	
+	
+      
+      // Calculate and plot the points on the chart
+      for (let i = -10; i <= 10; i += 1) {
+        let y = parsedEquation.eval({x: i}).toString();
+		//console.log(y);
+		if(series <1)
+		{
+		chart.data.labels.push(i);
+		}
+        chart.data.datasets[series].data.push(y);
+      }
+
+      // Update the chart
+	  series +=1;
+      chart.update();
+    }
+  </script>
+</body>
+</html>
