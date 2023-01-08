@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Platformer Game</title>
+</head>
+<body>
+    <canvas id="gameCanvas" width="480" height="320"></canvas>
+    <script>
+        // Set up canvas and context
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Create player character
+        const player = {
+            x: 50,
+            y: 50,
+            width: 20,
+            height: 30,
+            color: '#ff0000',
+            speed: 5,
+            velocity_y: 0,
+            velocity_x: 0,
+            gravity: 0.2,
+            friction: 0.8,
+            maxVelocity: 6
+        };
+
+        // Create platforms array
+        const platforms = [{ x: 0, y: 250, width: 100, height: 10, color: '#00ff00' }, { x: 150, y: 200, width: 100, height: 10, color: '#00ff00' }, { x: 300, y: 150, width: 100, height: 10, color: '#00ff00' }, { x: 450, y: 100, width: 100, height: 10, color: '#00ff00' }];
+
+        // Set up game loop
+        function update() {
+            // Update player position based on velocity
+            player.x += player.velocity_x;
+            player.velocity_x *= player.friction;
+            player.y += player.velocity_y;
+            player.velocity_y += player.gravity;
+
+            // Limit player's velocity
+            if (player.velocity_x > player.maxVelocity) {
+                player.velocity_x = player.maxVelocity;
+            } else if (player.velocity_x < -player.maxVelocity) {
+                player.velocity_x = -player.maxVelocity;
+            }
+
+
+            if (player.velocity_y > player.maxVelocity) {
+                player.velocity_y = player.maxVelocity;
+            } else if (player.velocity_y < -player.maxVelocity) {
+                player.velocity_y = -player.maxVelocity;
+            }
+
+        // Check for collision with platforms
+        platforms.forEach(platform => {
+            if (player.x + player.width > platform.x && player.x < platform.x + platform.width &&
+                player.y + player.height > platform.y && player.y < platform.y + platform.height) {
+                // Player is colliding with this platform, stop player's downward velocity and set player's y position to the top of the platform
+                player.velocity = 0;
+                player.y = platform.y - player.height;
+            }
+        });
+
+        requestAnimationFrame(update);
+        }
+
+
+                
+        document.addEventListener('keydown', event => {
+            switch (event.keyCode) {
+                case 37: // Left arrow key
+                    player.velocity_x -= player.speed;
+                    break;
+                case 38: // Up arrow key
+                    player.velocity_y = -10;
+                    break;
+                case 39: // Right arrow key
+                    player.velocity_x += player.speed;
+                    break;
+            }
+        });
+
+
+
+        function draw() {
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw platforms
+            platforms.forEach(platform => {
+                ctx.fillStyle = platform.color;
+                ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
+            });
+
+            // Draw player
+            ctx.fillStyle = player.color;
+            ctx.fillRect(player.x, player.y, player.width, player.height);
+
+            requestAnimationFrame(draw);
+        }
+
+        update();
+        draw();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
